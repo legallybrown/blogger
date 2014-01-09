@@ -24,5 +24,8 @@ class ArticlesController < ApplicationController
     @articles = Article.destroy(params[:id])
     redirect_to articles_path(@article)
   end
-  
+
+  def confirm_deletion
+  end 
+
 end
