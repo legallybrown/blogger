@@ -2,7 +2,14 @@
 
 <p><%= @article.body %></p>
 
-<%= link_to "Back to Articles", articles_path %> 
+<br ></br>
+
+<%= link_to "Back to Articles", articles_path %>
+
+<p></p>
+<br ></br>
+
+<%= link_to "Delete Article", article_path(@article), method: :delete %> 
 
 
 
