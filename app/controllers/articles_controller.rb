@@ -40,8 +40,8 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.destroy(params[:id])
-    flash.notice = "The article '#{article.title}' has been banished"
-    
+    flash.notice = "The article '#{@article.title}' has been banished"
+
     redirect_to articles_path
   end 
 
