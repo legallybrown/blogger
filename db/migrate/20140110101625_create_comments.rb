@@ -1,4 +1,4 @@
-class CreateComments < ActiveRecord::Migration
+binclass CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
       t.string :author_name
