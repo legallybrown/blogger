@@ -4,8 +4,7 @@
   <% @tag.each do |tag| %>
   <li>
     <%= link_to "#{tag.name} (#{tag.articles.count})" , tag_path(tag) %>
-   
-    </li>
+   </li>
   <% end %>   
 </ul>
 

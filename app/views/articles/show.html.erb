@@ -6,7 +6,18 @@
     <%= link_to tag.name, tag_path(tag) %> 
   <% end %>
 </p>
-<br ></br> 
+
+<br />
+
+<p>
+
+<% if @article.image.exists? %>
+      <%= image_tag @article.image.url %><br/>
+<% end %>
+</p>
+
+
+<br />
 
 <p><%= @article.body %></p>
 
@@ -27,6 +38,7 @@
 <%= link_to "Edit this Article", edit_article_path %>
 
 <p></p>
+
 <br ></br>
 
 
