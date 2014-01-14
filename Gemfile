@@ -37,6 +37,8 @@ end
 
 gem 'paperclip' 
 
+gem 'sorcery'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
