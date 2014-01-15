@@ -1,24 +1,16 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %></p>
 
 <p>
-  <strong>Username:</strong>
-  <%= @author.username %>
+  <strong>Username:</strong>  <%= @author.username %>
 </p>
+<p></p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @author.email %>
+  <strong>Email:</strong>   <%= @author.email %>
 </p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @author.password %>
-</p>
-
-<p>
-  <strong>Password confirmation:</strong>
-  <%= @author.password_confirmation %>
-</p>
+<p></p>
+<br /></br> 
 
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>

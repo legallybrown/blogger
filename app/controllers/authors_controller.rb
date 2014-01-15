@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
-
+  before_filter :zero_authors_or_authenticated, only: [:new, :create]
   # GET /authors
   # GET /authors.json
   def index
@@ -11,6 +11,15 @@ class AuthorsController < ApplicationController
   # GET /authors/1.json
   def show
   end
+
+  
+
+def zero_authors_or_authenticated
+  unless Author.count == 0 || current_user
+    redirect_to root_path
+    return false
+  end
+end
 
   # GET /authors/new
   def new
@@ -36,6 +45,8 @@ class AuthorsController < ApplicationController
       end
     end
   end
+
+  before_filter :require_login, except: [:new, :create]
 
   # PATCH/PUT /authors/1
   # PATCH/PUT /authors/1.json
@@ -69,6 +80,6 @@ class AuthorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_params
-      params.require(:author).permit(:username, :email, :password, :password_confirmation)
+      params.require(:author).permit( :username, :email, :password, :password_confirmation)
     end
 end
